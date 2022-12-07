@@ -6,8 +6,8 @@ console.log(mybirthdate)
 
 console.log(today > mybirthdate)
 
-const birthDay = 16
-const birthMonth = 9
-const birthYear = 1999
+const birthDay = mybirthdate.getDate()
+const birthMonth = mybirthdate.getMonth() + 1
+const birthYear = mybirthdate.getFullYear()
 
 console.log(birthDay + '/' + birthMonth + '/' + birthYear)

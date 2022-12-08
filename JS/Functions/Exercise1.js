@@ -7,12 +7,8 @@ console.log(empty())
 
 // async function
 
-function timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 async function sleep() {
-    await timeout(5000);
-    return console.log("I'm a promise");
+    return setTimeout(() => console.log("I'm a promise"), 5000);
 }
 
 sleep()
@@ -20,16 +16,16 @@ sleep()
 // generator function
 
 function* evenNumbers(){
-    let number = 1;
+    let number = 0;
     while(true){
-        number++
-        yield number++
+        yield number += 2
 
         if(number === 12){
             return number
         }
     }
 }
+
 const gen = evenNumbers()
 
 console.log(gen.next())

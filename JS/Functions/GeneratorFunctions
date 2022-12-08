@@ -1,0 +1,19 @@
+// Generator functions
+
+function* generateId() {
+    let id= 0;
+    while(true){
+        id++ //increments id
+        yield id // waits until the function is called again
+        if(id === 3){
+            return id
+        }
+    }
+}
+
+const gen = generateId()
+
+console.log(gen.next()) //gen.next().value displays only the value (1)
+console.log(gen.next())
+console.log(gen.next())
+console.log(gen.next())

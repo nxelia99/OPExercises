@@ -1,4 +1,4 @@
-
+//class Student
 class Student {
     constructor(name, list){
       this.name = name

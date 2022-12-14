@@ -1,0 +1,30 @@
+//inheritance
+
+class Person {
+    constructor(name, age){
+      this.name = name
+      this.age = age
+    }
+    sayHi(){
+        console.log(`hello my name is ${this.name}, I'm ${this.age} y/o`)
+    }
+  }
+
+class Developer extends Person{
+    constructor(name, age, language){
+        super(name, age) //declares the parent class attributes
+        this.language = language
+    }
+    sayHi(){ //override
+        super.sayHi()
+        console.log("and I'm a dev")
+    }
+}
+
+const dev1 = new Developer('Kai', 23, 'Javascript')
+console.log(dev1)
+dev1.sayHi()
+
+//polymorphism: defines multiple forms of a method and 
+//depending upon the runtime scenario, one type of object 
+//can have different behavior.

@@ -1,3 +1,5 @@
+//declare the class
+
 class Student {
     constructor(name, list){
       this.name = name

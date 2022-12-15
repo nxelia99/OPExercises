@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(43, 76, 92);
+}
+.section{
+    background-color: rgb(196, 218, 238);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.paragraph{
+    background-color: azure;
+    padding: 1rem;
+}
+
+.paragraph.dragging{
+    opacity: 0.3;
+}

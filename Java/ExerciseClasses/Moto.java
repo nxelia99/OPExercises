@@ -37,6 +37,13 @@ public class Moto { //nombre de la clase
     protected Double getAtributo4() {
         return kilometraje;
     }
+    
+    //acelerar
+    public double acelerar(int cantidad){
+        double total = cantidad + (cantidad * 0.5);
+        return (int) total;
+
+    }}
 
 
 

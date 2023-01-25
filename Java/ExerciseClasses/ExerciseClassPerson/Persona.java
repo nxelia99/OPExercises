@@ -19,6 +19,11 @@ public class Persona { //clase persona
     //constructor con parámetros
     public Persona(String nombre, String apellidos, String genero, int edad, double altura){
 
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.genero = genero;
+        this.edad = edad;
+        this.altura = altura;
 
 
 

@@ -5,9 +5,9 @@ public class Persona { //clase persona
 
     //atributos
 
-    protected String nombre, apellidos, genero;
-    protected int edad;
-    protected double altura;
+    private String nombre, apellidos, genero;
+    private int edad;
+    private double altura;
 
 
     //constructor sin parámetros

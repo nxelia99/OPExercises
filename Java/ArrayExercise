@@ -1,0 +1,39 @@
+package com.example.tarea1febrero;
+
+import java.util.Scanner;
+
+
+public class Ejercicio1Febrero {
+
+    public static void main(String[] args) {
+
+        // creación de la matriz de 4 filas y 6 columnas
+
+        String[][] matriz = {{"X","X","X","X","X","X"},{"X","X","X", "X","X","X"}, {"X","X","X","X","X","X"}, {"X","X","X","X","X","X"}};
+
+        // bucle for para rellenar la matriz almacenando cada posición de la matriz
+        // y visualización de los datos que existen en la matriz
+        for (int x=0; x < matriz.length; x++) {
+            for (int y=0; y < matriz[x].length; y++) {
+                System.out.print (matriz[x][y]);
+                if (y!=matriz[x].length-1) System.out.print("\t");
+            }
+            System.out.println("");
+        }
+        System.out.println("\n**Introduce las coordenadas del elemento a cambiar**");
+        Scanner scannerI = new Scanner(System.in);
+        System.out.println("\nCoordenada I(filas):");
+        int coordenadaI = scannerI.nextInt();
+        if (coordenadaI < 0 || coordenadaI > 4){
+            System.out.println("Coordenada I fuera del rango");
+        }
+
+        System.out.println("\nCoordenada J(filas):");
+        int coordenadaJ = scannerI.nextInt();
+        if (coordenadaJ < 0 || coordenadaJ > 6){
+            System.out.println("Coordenada J fuera del rango");
+        }
+
+
+
+    }

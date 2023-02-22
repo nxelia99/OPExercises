@@ -1,4 +1,4 @@
-package com.example.tarea1febrero;
+com.example.tarea1febrero;
 
 import java.util.Scanner;
 
@@ -9,31 +9,63 @@ public class Ejercicio1Febrero {
 
         // creación de la matriz de 4 filas y 6 columnas
 
-        String[][] matriz = {{"X","X","X","X","X","X"},{"X","X","X", "X","X","X"}, {"X","X","X","X","X","X"}, {"X","X","X","X","X","X"}};
+        String[][] matriz = {{"X", "X", "X", "X", "X", "X"}, {"X", "X", "X", "X", "X", "X"}, {"X", "X", "X", "X", "X", "X"}, {"X", "X", "X", "X", "X", "X"}};
 
         // bucle for para rellenar la matriz almacenando cada posición de la matriz
-        // y visualización de los datos que existen en la matriz
-        for (int x=0; x < matriz.length; x++) {
-            for (int y=0; y < matriz[x].length; y++) {
-                System.out.print (matriz[x][y]);
-                if (y!=matriz[x].length-1) System.out.print("\t");
+        // y visualizar de los datos que existen en la matriz
+        for (int x = 0; x < matriz.length; x++) {
+            for (int y = 0; y < matriz[x].length; y++) {
+                System.out.print(matriz[x][y]);
+                if (y != matriz[x].length - 1) System.out.print("\t");
             }
             System.out.println("");
         }
         System.out.println("\n**Introduce las coordenadas del elemento a cambiar**");
-        Scanner scannerI = new Scanner(System.in);
-        System.out.println("\nCoordenada I(filas):");
-        int coordenadaI = scannerI.nextInt();
-        if (coordenadaI < 0 || coordenadaI > 4){
-            System.out.println("Coordenada I fuera del rango");
+
+        //declaración de las variables scanner y coordenadaI
+        Scanner scanner;
+        int coordenadaI;
+
+        // bucle para preguntar por un valor hasta que cumpla la condición
+        while (true) {
+            scanner = new Scanner(System.in);
+            System.out.println("\nCoordenada I(filas):");
+            coordenadaI = scanner.nextInt();
+            if (coordenadaI < 0 || coordenadaI > 3) {
+                System.out.println("Coordenada I fuera del rango");
+            } else break;
         }
 
-        System.out.println("\nCoordenada J(filas):");
-        int coordenadaJ = scannerI.nextInt();
-        if (coordenadaJ < 0 || coordenadaJ > 6){
-            System.out.println("Coordenada J fuera del rango");
+        // declaración de la variable coordenadaJ
+        int coordenadaJ;
+
+        // bucle para preguntar por un valor hasta que cumpla la condición
+        while (true) {
+            System.out.println("\nCoordenada J(filas):");
+            coordenadaJ = scanner.nextInt();
+            if (coordenadaJ < 0 || coordenadaJ > 5) {
+                System.out.println("Coordenada J fuera del rango");
+            } else break;
         }
 
+        // pide el nuevo valor a añadir
+        System.out.println("\nIntroduce nuevo valor: ");
+        Scanner scannernuevo = new Scanner(System.in);
+        String nuevovalor = scannernuevo.nextLine();
+
+        // cambia el valor en las coordenadas indicadas
+        matriz[coordenadaI][coordenadaJ] = String.valueOf(nuevovalor);
+
+        //bucle for para mostrar en pantalla la nueva matriz
+        for (int x = 0; x < matriz.length; x++) {
+            for (int y = 0; y < matriz[x].length; y++) {
+                System.out.print(matriz[x][y]);
+                if (y != matriz[x].length - 1) System.out.print("\t");
+            }
+            System.out.println("");
+        }
+        //muestra en pantalla cuántos caracteres tiene el nuevo elemento.
+        System.out.println("\nEl nuevo elemento introducido en la matriz tiene " + nuevovalor.length() + " caracteres.");
 
 
     }

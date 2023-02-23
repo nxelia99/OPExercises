@@ -1,4 +1,4 @@
-com.example.tarea1febrero;
+package com.example.tarea1febrero;
 
 import java.util.Scanner;
 
@@ -8,17 +8,17 @@ public class Ejercicio1Febrero {
     public static void main(String[] args) {
 
         // creación de la matriz de 4 filas y 6 columnas
-
+        System.out.println("**Matriz de 4 filas y 6 columnas** \n");
         String[][] matriz = {{"X", "X", "X", "X", "X", "X"}, {"X", "X", "X", "X", "X", "X"}, {"X", "X", "X", "X", "X", "X"}, {"X", "X", "X", "X", "X", "X"}};
 
         // bucle for para rellenar la matriz almacenando cada posición de la matriz
-        // y visualizar de los datos que existen en la matriz
+        // y visualizar los datos que existen en la matriz
         for (int x = 0; x < matriz.length; x++) {
             for (int y = 0; y < matriz[x].length; y++) {
                 System.out.print(matriz[x][y]);
                 if (y != matriz[x].length - 1) System.out.print("\t");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
         System.out.println("\n**Introduce las coordenadas del elemento a cambiar**");
 
@@ -31,7 +31,8 @@ public class Ejercicio1Febrero {
             scanner = new Scanner(System.in);
             System.out.println("\nCoordenada I(filas):");
             coordenadaI = scanner.nextInt();
-            if (coordenadaI < 0 || coordenadaI > 3) {
+            //condición para comprobar si la coordenada está dentro del rango
+            if (coordenadaI < 0 || coordenadaI >= 4) {
                 System.out.println("Coordenada I fuera del rango");
             } else break;
         }
@@ -43,7 +44,8 @@ public class Ejercicio1Febrero {
         while (true) {
             System.out.println("\nCoordenada J(filas):");
             coordenadaJ = scanner.nextInt();
-            if (coordenadaJ < 0 || coordenadaJ > 5) {
+            //condición para comprobar si la coordenada está dentro del rango
+            if (coordenadaJ < 0 || coordenadaJ >= 6) {
                 System.out.println("Coordenada J fuera del rango");
             } else break;
         }
@@ -53,7 +55,7 @@ public class Ejercicio1Febrero {
         Scanner scannernuevo = new Scanner(System.in);
         String nuevovalor = scannernuevo.nextLine();
 
-        // cambia el valor en las coordenadas indicadas
+        // asigna el nuevo valor en las coordenadas indicadas
         matriz[coordenadaI][coordenadaJ] = String.valueOf(nuevovalor);
 
         //bucle for para mostrar en pantalla la nueva matriz
@@ -64,8 +66,17 @@ public class Ejercicio1Febrero {
             }
             System.out.println("");
         }
-        //muestra en pantalla cuántos caracteres tiene el nuevo elemento.
-        System.out.println("\nEl nuevo elemento introducido en la matriz tiene " + nuevovalor.length() + " caracteres.");
+
+        // condición para adaptar la concordancia de caracter/caracteres
+        // de acuerdo con la longitud del string
+        if(nuevovalor.length() > 1){
+            //muestra en pantalla cuántos caracteres tiene el nuevo elemento.
+            System.out.println("\nEl nuevo elemento introducido en la matriz tiene " + nuevovalor.length() + " caracteres.");
+
+        } else{
+            System.out.println("\nEl nuevo elemento introducido en la matriz tiene 1 caracter.");
+
+        }
 
 
     }

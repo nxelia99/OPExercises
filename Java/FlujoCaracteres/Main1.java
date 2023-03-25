@@ -1,38 +1,46 @@
 package com.example.tarea1marzo;
 
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+
+
 
 public class Main1 {
 
     public static void main(String[] args) {
-        FileInputStream in = null;
-        FileOutputStream out = null;
 
-        String rutaFicheroALeer = System.getProperty("user.dir") + "/archivo.txt";
-        String rutaFicheroAEscribir = System.getProperty("user.dir") + "/copia.txt";
+        //Establecemos la ruta usando getProperty, para que nos cree el fichero
+        //en la ruta en la que estamos ahora.
 
+        String rutaFicheroALeer = System.getProperty("user.dir") + "\\archivo.txt";
+        String rutaFicheroAEscribir = System.getProperty("user.dir") + "\\copia.txt";
+
+        System.out.println(rutaFicheroALeer);
+        
         try {
-            in = new FileInputStream("archivo");
-            out = new FileOutputStream("copia");
+            //seleccionamos los archivos que vamos a usar
+            FileInputStream in = new FileInputStream(rutaFicheroALeer);
+            FileOutputStream out = new FileOutputStream(rutaFicheroAEscribir);
 
-            int c;
-            while((c=in.read()) !=-1){
+
+            int c; // en esta variable almacenaremos los caracteres del archivo de origen
+            while( (c = in.read() ) != -1)
                 out.write(c);
-            }
-            System.out.println(rutaFicheroALeer);
+                in.close();
+                out.close();
+            System.out.println("Archivo copiado con éxito");
+
+
 
 
         } catch (Exception e) {
 
-            System.out.println("Ha ocurrido un fallo");
+            System.err.println("Ha ocurrido un fallo" + e.toString());
 
         } finally{
 
-            System.out.println("la aplicacion finalizado");
+            System.out.println("La aplicacion ha finalizado");
 
-    }
+        }
 
 
 } }

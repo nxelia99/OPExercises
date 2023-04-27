@@ -37,7 +37,7 @@ public class ClasC extends ClasA{
 
     @Override
     public String toString(){
-        return super.toString() + ", ClasC [atr1_clasC=" + atr1_clasC + ", atr2_clasC=" + atr2_clasC;
+        return super.toString() + "\nClasC: atr1_clasC: " + atr1_clasC + ", atr2_clasC: " + atr2_clasC;
     }
 
 }

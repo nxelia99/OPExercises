@@ -34,7 +34,7 @@ public abstract class ClasB extends ClasA{
 
     @Override
     public String toString() {
-        return super.toString() + "ClasB: " + "atr1_clasB: " + atr1_clasA + ", atr2_clasA: " + atr2_clasA + " de tipo String en ";
+        return super.toString() + "\ntipoEnum: " + enum1;
     }
 
 

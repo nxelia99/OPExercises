@@ -35,6 +35,7 @@ public abstract class ClasA {
 
     @Override
     public String toString() {
-        return "ClasA: " + "atr1_clasA: " + atr1_clasA + ", atr2_clasA: " + atr2_clasA + " de tipo String en ";
+        return "ClasA: " + "atr1_clasA: " + atr1_clasA + ", atr2_clasA: " + atr2_clasA + " de tipo String en objC";
     }
 }
+

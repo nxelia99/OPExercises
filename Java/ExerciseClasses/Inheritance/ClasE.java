@@ -26,11 +26,19 @@ public class ClasE extends ClasB implements InterB{
     //interface).
     @Override
     public double metodoAbsClasB(int numero) {
-        return 0;
+        return numero * atr1_clasE;
+    }
+
+    @Override
+    public void printB(String textB) {
+        System.out.println();
     }
 
     //7. Reescritura del metodo toString para mostrar los datos de esta clase pero tambien
     //se debe usar el metodo toString del padre(super.toString()).
-
+    @Override
+    public String toString(){
+        return super.toString() + "\nClasE: atr1_clasE: " + atr1_clasE + ", atr2_clasE: " + atr2_clasE + " de tipo String en objE, atr3_clasE: " + atr3_clasE + " de tipo String en objE";
+    }
 
 }

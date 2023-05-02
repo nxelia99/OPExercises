@@ -11,8 +11,8 @@ public class ClasE extends ClasB implements InterB{
     protected String atr3_clasE;
 
     //4. Constructor con el total de parametros.
-    public ClasE(EnumA enum1, int atr1_clasA, String atr2_clasA, int atr1_clasE, String atr2_clasE, String atr3_clasE) {
-        super(enum1, atr1_clasA, atr2_clasA);
+    public ClasE(EnumA enum1, int atr1_clasA, String atr2_clasA, int atr1_clasE, String atr2_clasE, String atr3_clasE, String nombre) {
+        super(enum1, atr1_clasA, atr2_clasA, nombre);
         this.atr1_clasE = atr1_clasE;
         this.atr2_clasE = atr2_clasE;
         this.atr3_clasE = atr3_clasE;
@@ -21,6 +21,33 @@ public class ClasE extends ClasB implements InterB{
 
 
     //5. Metodos getter y setter para cada atributo
+
+
+    public static int getAtr1_clasE() {
+        return atr1_clasE;
+    }
+
+    public static void setAtr1_clasE(int atr1_clasE) {
+        ClasE.atr1_clasE = atr1_clasE;
+    }
+
+    public String getAtr2_clasE() {
+        return atr2_clasE;
+    }
+
+    public void setAtr2_clasE(String atr2_clasE){
+        this.atr2_clasE = atr2_clasE;
+    }
+
+    public String getAtr3_clasE(){
+        return atr3_clasE;
+    }
+
+    public void setAtr3_clasE(String atr3_clasE){
+        this.atr3_clasE = atr3_clasE;
+    }
+
+
 
     //6. Metodos abstractos que habra que implementar (procedentes de otra clase e
     //interface).
@@ -42,3 +69,4 @@ public class ClasE extends ClasB implements InterB{
     }
 
 }
+

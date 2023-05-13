@@ -2,6 +2,8 @@
 
 import java.sql.SQLException;
 
+// Requires ConectorJDBC
+
 public class Main {
 
 

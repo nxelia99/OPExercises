@@ -5,5 +5,23 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<bean id="miEmpleado" class="com.example.demo.SecretarioEmpleado"></bean>
+<!-- Creacion dependencia -->
+	<bean id="miInforme" class="com.example.demo.Informe"></bean>
+	<!-- Configuracion de la dependencia -->
+	<bean id="miEmpleado" class="com.example.demo.DirectorEmpleado">
+		<constructor-arg ref="miInforme"></constructor-arg>
+	</bean>
+	<bean id="jefeEmpleado" class="com.example.demo.JefeEmpleado">
+		<constructor-arg ref="miInforme"></constructor-arg>
+	</bean>
+	<bean id="miSecretario" class="com.example.demo.SecretarioEmpleado">
+	<!-- no se pone el set y la primera letra en minuscula: informenuevo -->
+		<property name="informeNuevo" ref="miInforme"></property>
+	<!-- valor del campo email, el correo para los secretarios -->
+		<property name="email" value="secretaria@secretaria.es"></property>
+
+	<!-- no se pone el set y la primera letra en minuscula: informenuevo -->
+		<property name="nombreEmpresa" value="EmpresaSL"></property>
+	</bean>
+
 </beans>
